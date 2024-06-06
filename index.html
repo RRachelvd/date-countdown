@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Molengo&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poly:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countdown klok</title>
+    <style>
+      h1 {
+        font-weight: 500;
+        font-size: 60px;
+      }
+      h2 {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 25px;
+      }
+
+      h3 {
+        font-weight: 300;
+        font-style: italic;
+        margin-top: 50px;
+      }
+      .clock {
+        font-family: monospace;
+        text-align: center;
+        font-size: 60px;
+        margin-top: 40px;
+        background-color: brown;
+        color: whitesmoke;
+        padding: 40px;
+        width: 50%;
+        border-radius: 20px;
+        display: block;
+        margin: 40px auto;
+      }
+
+      body {
+        font-family: "Merritweather", sans-serif;
+      }
+
+      img {
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+        filter: contrast(80%);
+        margin: 0 auto;
+        text-align: center;
+        margin: 25px;
+        border: 6px solid brown;
+      }
+
+      .container {
+        max-width: 80%;
+        text-align: center;
+        display: block;
+        margin: 50px auto;
+      }
+
+      .special-text {
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      @media (max-width: 800px) {
+        .container {
+          margin: 2px 2px;
+          padding: 25px;
+          text-align: center;
+          max-width: 100%;
+        }
+        .clock {
+          font-size: 30px;
+          width: 80%;
+        }
+        h1 {
+          font-size: 45px;
+          font-weight: 600;
+        }
+        h2 {
+          font-size: 25px;
+          line-height: 1.5;
+        }
+        h3 {
+          font-size: 20px;
+        }
+        img {
+          height: 130px;
+          width: 130px;
+          margin: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><h1>✨ Welkom! ✨</h1></div>
+      <h2>
+        bij de <span class="special-text">countdown klok</span> voor de eerte
+        date van Leendert en Rachèl...
+      </h2>
+      <div class="clock">
+        <div id="d">nachtjes</div>
+        <div id="h">uurtjes</div>
+        <div id="m">minuutjes</div>
+        <div id="s">secondjes</div>
+      </div>
+      <div class="pictures">
+        <span><img src="Leendert-klein.png" /></span>
+        <span><img src="Rachel-klein.png" /></span>
+      </div>
+
+      <h3>To click or not to click, that's the question...</h3>
+    </div>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("June 12, 2024 19:30:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+
+        document.getElementById("d").innerHTML = days + " nachtjes, ";
+
+        document.getElementById("h").innerHTML = hours + " uurtjes, ";
+
+        document.getElementById("m").innerHTML = minutes + " minuutjes, ";
+
+        document.getElementById("s").innerHTML = seconds + " secondjes ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "JAAAAA ✨✨✨";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
