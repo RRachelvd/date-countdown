@@ -101,7 +101,7 @@
   </head>
   <body>
     <div class="container">
-      <div><h1>✨Welkom!✨</h1></div>
+      <div><h1>✨ Welkom! ✨</h1></div>
       <h2>
         bij de <span class="special-text">countdown klok</span> voor de eerste
         date van Leendert en Rachèl...
@@ -140,14 +140,31 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
+        var d = " nachtjes, ";
+        var h = " uurtjes, ";
+        var m = " minuutjes, ";
+        var s = " secondjes";
 
-        document.getElementById("d").innerHTML = days + " nachtjes, ";
+        if (days === 1) {
+          d = " nachtje, ";
+        }
+        if (hours === 1) {
+          h = " uurtje, ";
+        }
+        if (minutes === 1) {
+          m = " minuutje, ";
+        }
+        if (seconds === 1) {
+          s = " secondje";
+        }
 
-        document.getElementById("h").innerHTML = hours + " uurtjes, ";
+        document.getElementById("d").innerHTML = days + d;
 
-        document.getElementById("m").innerHTML = minutes + " minuutjes, ";
+        document.getElementById("h").innerHTML = hours + h;
 
-        document.getElementById("s").innerHTML = seconds + " secondjes ";
+        document.getElementById("m").innerHTML = minutes + m;
+
+        document.getElementById("s").innerHTML = seconds + s;
 
         // If the count down is over, write some text
         if (distance < 0) {
