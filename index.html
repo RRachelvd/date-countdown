@@ -12,6 +12,7 @@
       h1 {
         font-weight: 500;
         font-size: 60px;
+        font-weight: 600;
       }
       h2 {
         font-weight: 400;
@@ -36,10 +37,12 @@
         border-radius: 20px;
         display: block;
         margin: 40px auto;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       body {
         font-family: "Merritweather", sans-serif;
+        margin: 0px;
       }
 
       img {
@@ -69,6 +72,16 @@
         display: grid;
       }
 
+      .player {
+        margin: 20px;
+      }
+
+      footer {
+        background-color: #f9c23c;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
       @media (max-width: 800px) {
         .container {
           margin: 2px 2px;
@@ -77,7 +90,7 @@
           max-width: 100%;
         }
         .clock {
-          font-size: 30px;
+          font-size: 28px;
           width: 75%;
         }
         h1 {
@@ -95,6 +108,15 @@
           height: 120px;
           width: 120px;
           margin: 8px;
+        }
+        footer {
+          grid-template-columns: 1fr;
+        }
+        .player {
+          width: 90%;
+          text-align: center;
+          display: block;
+          margin: 20px auto;
         }
       }
     </style>
@@ -119,6 +141,22 @@
 
       <h3>To click or not to click, that's the question...</h3>
     </div>
+    <footer>
+      <div></div>
+      <div class="player">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/track/3850dYVgOFIXJh5U4BFEWH?utm_source=generator&theme=0"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div></div>
+    </footer>
     <script>
       // Set the date we're counting down to
       var countDownDate = new Date("June 12, 2024 19:30:00").getTime();
