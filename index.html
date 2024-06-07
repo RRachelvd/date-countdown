@@ -104,12 +104,16 @@
       }
 
       button:hover {
-        opacity: 60%;
+        opacity: 70%;
         cursor: pointer;
       }
 
+      button:visited {
+        opacity: 100%;
+      }
+
       footer {
-        background-color: #f9c23c;
+        background-color: brown;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
       }
@@ -122,16 +126,19 @@
           max-width: 100%;
         }
         .clock {
-          font-size: 28px;
-          width: 75%;
+          font-size: 30px;
+          width: 73%;
+          margin-bottom: 40px;
+          margin-top: 15px;
         }
         h1 {
-          font-size: 40px;
+          font-size: 50px;
           font-weight: 600;
         }
         h2 {
           font-size: 25px;
           line-height: 1.5;
+          margin-bottom: 38px;
         }
         h3 {
           font-size: 20px;
@@ -153,12 +160,15 @@
           display: block;
           margin: 20px auto 0px auto;
         }
+        button {
+          margin-bottom: 80px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div><h1>✨ Welkom! ✨</h1></div>
+      <div><h1>Welkom!</h1></div>
       <h2>
         bij de <span class="special-text">countdown klok</span> voor de eerste
         date van <span id="leendert">Leendert</span> en Rachèl...
@@ -283,17 +293,17 @@
         let leendert = prompt("Hoi. Ben jij Leendert?");
         if (leendert === "Ja" || leendert === "ja") {
           alert(
-            "Hoi Leendert!!! 🤗✨🌳 Deze pagina is nu gepersonaliseerd 👋 Ik zie je woensdag 😉"
+            "Hoi Leendert!!! 🤗✨🌳 \nDeze pagina is nu gepersonaliseerd 👋 \n\nIk zie je woensdag 😉"
           );
           let h1 = document.querySelector("h1");
           let leendert = document.querySelector("#leendert");
           let click = document.querySelector("#click");
-          h1.innerHTML = "✨ Welkom Leendert! ✨";
+          h1.innerHTML = "Welkom Leendert!";
           leendert.innerHTML = "jou";
-          click.innerHTML = `To click or not to click, that's the question... (en het antwoord is dan natuurlijk "ja" 😊)`;
+          click.innerHTML = `To click or not to click, that's the question... (en het antwoord dan is natuurlijk "ja" 😊)`;
         } else {
           alert(
-            `Niet zo verlegen Leendert, dat is nergens voor nodig 😊. Probeer het nog eens (type "ja")! Mocht je Leendert niet zijn, hmmm... Wat doe je dan hier?`
+            `Niet zo verlegen Leendert, dat is nergens voor nodig 😊 \nProbeer het nog eens (type "ja")! \n\nMocht je Leendert niet zijn, hmmm... Wat doe je dan hier?`
           );
         }
       }
