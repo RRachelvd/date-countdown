@@ -7,6 +7,12 @@
       href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Molengo&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poly:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oleo+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Countdown klok</title>
     <style>
       h1 {
@@ -18,27 +24,26 @@
         font-weight: 400;
         font-style: normal;
         font-size: 25px;
+        margin-bottom: 60px;
       }
 
       h3 {
         font-weight: 300;
         font-style: italic;
         margin-top: 10px;
-        margin-bottom: 90px;
+        margin-bottom: 85px;
       }
       .clock {
         font-family: monospace;
         text-align: center;
         font-size: 60px;
-        margin-top: 40px;
         background-color: brown;
         color: whitesmoke;
         padding: 40px;
         width: 50%;
         border-radius: 20px;
         display: block;
-        margin: 40px auto;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+        margin: 40px auto 30px auto;
       }
 
       body {
@@ -78,6 +83,31 @@
         margin: 20px;
       }
 
+      button {
+        padding: 30px;
+        font-family: "Oleo Script", system-ui;
+        font-size: 22px;
+        border-radius: 12px;
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(222, 168, 248) 0%,
+          rgb(168, 222, 248) 21.8%,
+          rgb(189, 250, 205) 35.6%,
+          rgb(243, 250, 189) 52.9%,
+          rgb(250, 227, 189) 66.8%,
+          rgb(248, 172, 172) 90%,
+          rgb(254, 211, 252) 99.7%
+        );
+        border: none;
+        margin-bottom: 50px;
+        transition: all 100ms ease-in-out;
+      }
+
+      button:hover {
+        opacity: 60%;
+        cursor: pointer;
+      }
+
       footer {
         background-color: #f9c23c;
         display: grid;
@@ -111,6 +141,7 @@
           width: 120px;
           margin: 8px;
         }
+
         footer {
           grid-template-columns: 1fr;
           margin: 0px;
@@ -130,7 +161,7 @@
       <div><h1>✨ Welkom! ✨</h1></div>
       <h2>
         bij de <span class="special-text">countdown klok</span> voor de eerste
-        date van Leendert en Rachèl...
+        date van <span id="leendert">Leendert</span> en Rachèl...
       </h2>
       <div class="clock">
         <div id="d">nachtjes</div>
@@ -143,7 +174,8 @@
         <span><img src="Rachel-klein.png" /></span>
       </div>
 
-      <h3>To click or not to click, that's the question...</h3>
+      <h3 id="click">To click or not to click, that's the question...</h3>
+      <button>Klik hier als je Leendert bent</button>
     </div>
     <footer>
       <div class="player">
@@ -222,6 +254,16 @@
           s = " secondje";
         }
 
+        if (
+          hours === 23 ||
+          hours === 22 ||
+          hours === 21 ||
+          hours === 20 ||
+          hours === 19
+        ) {
+          days = days + 1;
+        }
+
         document.getElementById("d").innerHTML = days + d;
 
         document.getElementById("h").innerHTML = hours + h;
@@ -236,6 +278,28 @@
           document.getElementById("demo").innerHTML = "JAAAAA ✨✨✨";
         }
       }, 1000);
+
+      function hiLeendert() {
+        let leendert = prompt("Hoi. Ben jij Leendert?");
+        if (leendert === "Ja" || leendert === "ja") {
+          alert(
+            "Hoi Leendert!!! 🤗✨🌳 Deze pagina is nu gepersonaliseerd 👋 Ik zie je woensdag 😉"
+          );
+          let h1 = document.querySelector("h1");
+          let leendert = document.querySelector("#leendert");
+          let click = document.querySelector("#click");
+          h1.innerHTML = "✨ Welkom Leendert! ✨";
+          leendert.innerHTML = "jou";
+          click.innerHTML = `To click or not to click, that's the question... (en het antwoord is dan natuurlijk "ja" 😊)`;
+        } else {
+          alert(
+            `Niet zo verlegen Leendert, dat is nergens voor nodig 😊. Probeer het nog eens (type "ja")! Mocht je Leendert niet zijn, hmmm... Wat doe je dan hier?`
+          );
+        }
+      }
+
+      let button = document.querySelector("button");
+      button.addEventListener("click", hiLeendert);
     </script>
   </body>
 </html>
