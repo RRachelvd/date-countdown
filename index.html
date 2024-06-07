@@ -33,6 +33,10 @@
         margin-top: 10px;
         margin-bottom: 85px;
       }
+
+      .normal {
+        font-style: normal;
+      }
       .clock {
         font-family: monospace;
         text-align: center;
@@ -300,8 +304,10 @@
           let h1 = document.querySelector("h1");
           let leendert = document.querySelector("#leendert");
           let click = document.querySelector("#click");
+          let smiley;
           h1.innerHTML = "Welkom Leendert!";
           leendert.innerHTML = "jou";
+          click.classList.add("normal");
           click.innerHTML = `To click or not to click, that's the question... (en het antwoord dan is natuurlijk "ja" 😊)`;
         } else {
           alert(
