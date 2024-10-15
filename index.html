@@ -63,7 +63,7 @@
         filter: contrast(80%);
         margin: 0 auto;
         text-align: center;
-        margin: 20px 25px;
+        margin: 20px 28px 25px 28px;
         border: 6px solid brown;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
       }
@@ -154,7 +154,7 @@
         img {
           height: 120px;
           width: 120px;
-          margin: 8px;
+          margin: 12px;
         }
 
         footer {
@@ -179,7 +179,7 @@
       <div><h1>Welkom!</h1></div>
       <h2>
         bij de <span class="special-text">countdown klok</span> voor de eerste
-        date van <span id="leendert">Leendert</span> en Rachèl...
+        date van <span id="naam-1">(naam 1)</span> en (naam 2)...
       </h2>
       <div class="clock">
         <div id="d">nachtjes</div>
@@ -188,12 +188,12 @@
         <div id="s">secondjes</div>
       </div>
       <div class="pictures">
-        <span><img src="Leendert-klein.png" /></span>
-        <span><img src="Rachel-klein.png" /></span>
+        <span><img src="naam1.png" /></span>
+        <span><img src="naam2.png" /></span>
       </div>
 
       <h3 id="click">To click or not to click, that's the question...</h3>
-      <button>Klik hier als je Leendert bent</button>
+      <button>Klik hier als je (naam 1) bent</button>
     </div>
     <footer>
       <div class="player">
@@ -235,7 +235,7 @@
     </footer>
     <script>
       // Set the date we're counting down to
-      var countDownDate = new Date("June 12, 2024 19:30:00").getTime();
+      var countDownDate = new Date("June 12, 2025 19:30:00").getTime();
 
       // Update the count down every 1 second
       var x = setInterval(function () {
@@ -297,28 +297,28 @@
         }
       }, 1000);
 
-      function hiLeendert() {
-        let leendert = prompt("Hoi. Ben jij Leendert?");
-        if (leendert === "Ja" || leendert === "ja") {
+      function hiNaam1() {
+        let naam1 = prompt("Hoi. Ben jij (naam 1)?");
+        if (naam1 === "Ja" || naam1 === "ja") {
           alert(
-            "Hoi Leendert!!! 🤗✨🌳 \nDeze pagina is nu gepersonaliseerd 👋 \n\nIk zie je woensdag 😉"
+            "Hoi (naam 1)!!! 🤗✨🌳 \nDeze pagina is nu gepersonaliseerd 👋 \n\nIk zie je (dag van de date) 😉"
           );
           let h1 = document.querySelector("h1");
-          let leendert = document.querySelector("#leendert");
+          let naam1 = document.querySelector("#naam-1");
           let click = document.querySelector("#click");
           let smiley;
-          h1.innerHTML = "Welkom Leendert!";
-          leendert.innerHTML = "jou";
+          h1.innerHTML = "Welkom (naam 1)!";
+          naam1.innerHTML = "jou";
           click.innerHTML = `To click or not to click, that's the question... (en het antwoord dan is natuurlijk gewoon "ja" <span class="normal">😊</span>)`;
         } else {
           alert(
-            `Niet zo verlegen Leendert, dat is nergens voor nodig 😊 \nProbeer het nog eens (typ "ja")! \n\nMocht je Leendert niet zijn, hmmm... Wat doe je dan hier?`
+            `Niet zo verlegen (naam 1), dat is nergens voor nodig 😊 \nProbeer het nog eens (typ "ja")! \n\nMocht je (naam 1) niet zijn, hmmm... Wat doe je dan hier?`
           );
         }
       }
 
       let button = document.querySelector("button");
-      button.addEventListener("click", hiLeendert);
+      button.addEventListener("click", hiNaam1);
     </script>
   </body>
 </html>
